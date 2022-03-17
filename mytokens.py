@@ -1,3 +1,0 @@
-#discord token
-TOKEN = 'OTQ0MTAzODY5OTU5NTM2NjYw.Yg8vPw.-3AB1tPzpL2oaJZ7ffZgMve5Gt8'
-lfm_token = '9a85d653c1a3cd100e170f5911615e98'
