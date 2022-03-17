@@ -2,6 +2,7 @@ import mytokens
 import discord
 import random
 from discord.ext import commands
+import requests
 
 client = discord.Client()
 client = commands.Bot(command_prefix = '$')
