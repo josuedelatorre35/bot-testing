@@ -48,7 +48,7 @@ print()
 '''1ST FUNCTION'''
 '''Now playing function (only prints information. No bot commands)'''
 
-'''
+
 #below is to print artist name (now playing)
 counter1 = 0
 for i in file['recenttracks']['track']:
@@ -78,7 +78,7 @@ for i in file['recenttracks']['track']:
     #'image' key contains a list, so get 3rd entry to retrieve large file url (by getting value for #text key)
     counter4 += 1
 
-'''
+'''End of Funtion'''
 
 
 '''2ND FUNCTION'''
@@ -101,5 +101,25 @@ for i in file2["topartists"]['artist']:
     print(i['url'])
     print()
 
+'''End of Funtion'''
 
 
+'''3RD FUNCTION'''
+'''Shows Top albums'''
+
+url3 = f'http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=rj&api_key={my_secret}&format=json'
+ 
+query3 = {'user': 'tequileros97', 'limit': 5}
+
+response3 = requests.get(url3, params = query3)
+file3 = response3.json()
+
+nice_file = json.dumps(file3, indent = 4, sort_keys= True)
+print(nice_file)
+
+for i in file3["topalbums"]['album']:
+    print(i['name']) #album name
+    print(i['artist']['name']) #artist name
+    print(f'Plays:', i['playcount']) #playcount
+    print(i['image'][2]['#text']) #image url
+    print()
