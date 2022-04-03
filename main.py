@@ -109,4 +109,23 @@ async def help(ctx):
 
     await author.send(embed=embed)
 
+@client.command() #embed command
+async def displays(ctx):
+    author = ctx.message.author
+    author_name, author_discriminator = str(author).split('#')
+
+    embed = discord.Embed(
+        colour = discord.Colour.blue()
+    )
+
+    embed.set_author(name= f'Now Playing - {author_name}', icon_url= author.avatar_url )
+    embed.set_footer(text='Possibly add genre tags here')
+    embed.set_thumbnail(url='https://media.discordapp.net/attachments/667900649664675857/953754912813101106/IMG_4972.jpg?width=556&height=676')
+    embed.add_field(name='Song', value='Album Name', inline= False)
+    embed.add_field(name='Artist', value='Artist Name', inline= False)
+    embed.add_field(name='Album', value='Album Name', inline= False)
+
+    await ctx.send(embed=embed)
+
+
 client.run(mytokens.TOKEN) #runs on_message definition  
